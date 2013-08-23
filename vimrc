@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 if has("gui_running")
   colors desert
   if has("gui_gtk2")
