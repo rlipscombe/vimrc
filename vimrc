@@ -70,4 +70,5 @@ autocmd BufNewFile,BufRead *.ejs set ft=html
 autocmd BufNewFile,BufRead *.ps1,*.psm1 set shiftwidth=4 softtabstop=4
 
 autocmd BufNewFile,BufRead *.md set ft=markdown
+autocmd BufNewFile,BufRead SCons* set ft=scons
 " vim: set ft=vim :
