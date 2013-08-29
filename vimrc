@@ -9,8 +9,11 @@ if has("gui_running")
   endif
 endif
 
-set lines=50
-set columns=120
+" On Mac, this causes the terminal window to be resized; we don't want that.
+if has("gui_running")
+  set lines=50
+  set columns=120
+endif
 
 " Make Backspace key work like most other apps
 set backspace=indent,eol,start
