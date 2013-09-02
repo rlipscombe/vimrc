@@ -72,6 +72,9 @@ autocmd BufNewFile,BufRead *.ps1,*.psm1 set shiftwidth=4 softtabstop=4
 autocmd BufNewFile,BufRead *.md set ft=markdown
 autocmd BufNewFile,BufRead SCons* set ft=scons
 
+autocmd BufNewFile,BufRead *bash* let b:is_bash=1
+autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
+
 augroup EI
   au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
 augroup END
