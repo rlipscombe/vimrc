@@ -18,19 +18,26 @@ endif
 " Make Backspace key work like most other apps
 set backspace=indent,eol,start
 
-" Shift+Del -> Cut, Ctrl+Ins -> Copy, Shift+Ins -> Paste
+" In Visual and Select mode, map Shift+Del -> Cut, and Ctrl+Ins -> Copy.
+" '+' is the cut buffer on X11, the clipboard on Windows.
 vnoremap <S-Del>    "+x
 vnoremap <C-Insert> "+y
 
-map <S-Insert>      "+gP
-cmap <S-Insert>     <C-R>+
-imap <S-Insert>     <C-R>+
-vmap <S-Insert>     <C-R>+
+" Shift+Ins -> Paste...
+"  "+gP pastes from the clipboard
+"   (n)ormal mode / (i)nsert mode
+nmap <S-Insert> "+gP
+"   (i)nsert mode - ???
+imap <S-Insert> <C-R><C-O>+
+"   (v)isual+select mode - ???
+vmap <S-Insert> "-d"+gP
+"   (c)ommand-line mode - ???
+cmap <S-Insert> <C-R><C-O>+
 
 " Current directory follows active file
 autocmd BufEnter * silent! lcd %:p:h
 
-" Status bar shows line, col:
+" Status bar shows line, col, file, file-format, file-type:
 set laststatus=2
 set statusline=Ln\ %l\ Col\ %v\ %F\ (%{&ff},\ %Y)
 
