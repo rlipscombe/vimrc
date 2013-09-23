@@ -10,10 +10,16 @@ git clone git://github.com/johnsyweb/vim-makeshift.git
 # fugitive.vim
 git clone git://github.com/tpope/vim-fugitive.git
 
+# Unimpaired
+git clone git://github.com/tpope/vim-unimpaired.git
+
 # Syntastic
 git clone https://github.com/scrooloose/syntastic.git
 
 # jade
 git clone https://github.com/digitaltoad/vim-jade.git
+
+# JavaScript
+git clone https://github.com/pangloss/vim-javascript.git
 
 # vim: ft=sh

@@ -76,13 +76,19 @@ autocmd BufNewFile,BufRead *.ejs set ft=html
 
 autocmd BufNewFile,BufRead *.ps1,*.psm1 set shiftwidth=4 softtabstop=4
 
-autocmd BufNewFile,BufRead *.md set ft=markdown
+autocmd BufNewFile,BufRead *.md set ft=markdown et sts=4 sw=4
 autocmd BufNewFile,BufRead SCons* set ft=scons
+autocmd BufNewFile,BufRead *.nut set ft=squirrel
 
 autocmd BufNewFile,BufRead *bash* let b:is_bash=1
 autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
 
+" electric imp uses tab width 4.
 augroup EI
   au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
 augroup END
+
+" Custom jshint settings:
+autocmd BufNewFile,BufRead *.js let g:syntastic_javascript_jshint_conf="~/.jshintrc"
+
 " vim: set ft=vim :
