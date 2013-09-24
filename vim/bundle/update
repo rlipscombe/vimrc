@@ -22,4 +22,7 @@ git clone https://github.com/digitaltoad/vim-jade.git
 # JavaScript
 git clone https://github.com/pangloss/vim-javascript.git
 
+# Beautify
+git clone https://github.com/maksimr/vim-jsbeautify.git
+
 # vim: ft=sh
