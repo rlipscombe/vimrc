@@ -7,10 +7,13 @@ if has("gui_running")
   elseif has("gui_win32")
     set guifont=Consolas:h10:cANSI
   endif
+  " TODO: How do we detect Mac? That said, the default "menlo" font is
+  " acceptable.
 endif
 
-" On Mac, this causes the terminal window to be resized; we don't want that.
+" On Mac OS X, this causes the terminal window to be resized; we don't want that.
 if has("gui_running")
+  " gui_running => not in a terminal => safe to resize.
   set lines=50
   set columns=120
 endif
@@ -33,6 +36,9 @@ imap <S-Insert> <C-R><C-O>+
 vmap <S-Insert> "-d"+gP
 "   (c)ommand-line mode - ???
 cmap <S-Insert> <C-R><C-O>+
+
+" Delete buffer
+map <Leader>q :bdel<Enter>
 
 " Current directory follows active file
 autocmd BufEnter * silent! lcd %:p:h
@@ -88,7 +94,8 @@ augroup EI
   au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
 augroup END
 
-" Custom jshint settings:
-autocmd BufNewFile,BufRead *.js let g:syntastic_javascript_jshint_conf="~/.jshintrc"
+" Custom syntastic settings:
+let g:syntastic_javascript_jshint_conf="~/.jshintrc"
+let g:syntastic_always_populate_loc_list=1
 
 " vim: set ft=vim :
