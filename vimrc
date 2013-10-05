@@ -28,7 +28,7 @@ vnoremap <C-Insert> "+y
 
 " Shift+Ins -> Paste...
 "  "+gP pastes from the clipboard
-"   (n)ormal mode / (i)nsert mode
+"   (n)ormal mode
 nmap <S-Insert> "+gP
 "   (i)nsert mode - ???
 imap <S-Insert> <C-R><C-O>+
@@ -39,6 +39,9 @@ cmap <S-Insert> <C-R><C-O>+
 
 " Delete buffer
 map <Leader>q :bdel<Enter>
+
+" Reformat paragraph
+map <Leader>p gqip
 
 " Current directory follows active file
 autocmd BufEnter * silent! lcd %:p:h
@@ -88,6 +91,8 @@ autocmd BufNewFile,BufRead *.nut set ft=squirrel
 
 autocmd BufNewFile,BufRead *bash* let b:is_bash=1
 autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
+
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8
 
 " electric imp uses tab width 4.
 augroup EI
