@@ -25,4 +25,9 @@ git clone https://github.com/pangloss/vim-javascript.git
 # Beautify
 git clone https://github.com/maksimr/vim-jsbeautify.git
 
+# Django
+mkdir -p django/syntax
+wget 'http://www.vim.org/scripts/download_script.php?src_id=17736' -O django/syntax/django.vim
+wget 'http://www.vim.org/scripts/download_script.php?src_id=6678' -O django/syntax/htmldjango.vim
+
 # vim: ft=sh
