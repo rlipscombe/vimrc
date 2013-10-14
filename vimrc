@@ -30,7 +30,9 @@ vnoremap <C-Insert> "+y
 "  "+gP pastes from the clipboard
 "   (n)ormal mode
 nmap <S-Insert> "+gP
-"   (i)nsert mode - ???
+"   (i)nsert mode - <C-R> is normally redo?, then <C-O>, which performs the
+"   next action (+) in normal mode, then goes back to insert mode. But not
+"   entirely sure???
 imap <S-Insert> <C-R><C-O>+
 "   (v)isual+select mode - ???
 vmap <S-Insert> "-d"+gP
@@ -69,6 +71,9 @@ set selectmode=mouse,key
 set selection=exclusive
 set keymodel=startsel,stopsel
 
+" Allow moving away from modified buffers
+set hidden
+
 " Indentation
 set autoindent
 
@@ -92,7 +97,14 @@ autocmd BufNewFile,BufRead *.nut set ft=squirrel
 autocmd BufNewFile,BufRead *bash* let b:is_bash=1
 autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
 
+" For 'make', tabs = tabs.
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8
+
+" Erlang
+autocmd FileType erlang set expandtab shiftwidth=4 softtabstop=4 tabstop=8
+
+" Django Templates (also erlydtl)
+autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
 
 " electric imp uses tab width 4.
 augroup EI
