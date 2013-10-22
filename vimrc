@@ -69,6 +69,11 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" electric imp uses tab width 4.
+augroup EI
+  au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
+augroup END
+
 " Keyboard selection is more like Windows
 set selectmode=mouse,key
 set selection=exclusive
@@ -110,11 +115,6 @@ autocmd BufNewFile,BufRead *.app.src set filetype=erlang
 
 " Django Templates (also erlydtl)
 autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
-
-" electric imp uses tab width 4.
-augroup EI
-  au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
-augroup END
 
 " Custom syntastic settings:
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
