@@ -105,6 +105,8 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8
 
 " Erlang
 autocmd FileType erlang set expandtab shiftwidth=4 softtabstop=4 tabstop=8
+autocmd BufNewFile,BufRead rebar.config set filetype=erlang
+autocmd BufNewFile,BufRead *.app.src set filetype=erlang
 
 " Django Templates (also erlydtl)
 autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
