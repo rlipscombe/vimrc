@@ -1,5 +1,10 @@
+" This comes first.
+set nocompatible
+
+" I use pathogen for managing plugins.
 execute pathogen#infect()
 
+" Set the font, colour scheme, etc. appropriately.
 if has("gui_running")
   colors desert
   if has("gui_gtk2")
@@ -11,7 +16,7 @@ if has("gui_running")
   " acceptable.
 endif
 
-" On Mac OS X, this causes the terminal window to be resized; we don't want that.
+" On Mac OS X, "set lines" causes the terminal window to be resized; we don't want that.
 if has("gui_running")
   " gui_running => not in a terminal => safe to resize.
   set lines=50
@@ -30,9 +35,8 @@ vnoremap <C-Insert> "+y
 "  "+gP pastes from the clipboard
 "   (n)ormal mode
 nmap <S-Insert> "+gP
-"   (i)nsert mode - <C-R> is normally redo?, then <C-O>, which performs the
-"   next action (+) in normal mode, then goes back to insert mode. But not
-"   entirely sure???
+"   (i)nsert mode - Paste with auto-indent turned off.
+"   See http://www.reddit.com/r/programming/comments/ddbuc/how_i_boosted_my_vim/c0zelsm
 imap <S-Insert> <C-R><C-O>+
 "   (v)isual+select mode - ???
 vmap <S-Insert> "-d"+gP
@@ -56,7 +60,6 @@ set statusline=Ln\ %l\ Col\ %v\ %F\ (%{&ff},\ %Y)
 set wildmode=longest,list,full
 set wildmenu
 
-set nocompatible
 filetype plugin on
 filetype plugin indent on
 syntax on
