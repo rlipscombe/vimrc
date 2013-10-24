@@ -120,4 +120,10 @@ autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 let g:syntastic_always_populate_loc_list=1
 
+" Rainbow brackets
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " vim: set ft=vim :

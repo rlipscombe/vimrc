@@ -35,4 +35,7 @@ git clone https://github.com/derekwyatt/vim-scala.git
 
 # vim-elixir
 git clone https://github.com/elixir-lang/vim-elixir.git
+
+git clone https://github.com/kien/rainbow_parentheses.vim
+
 # vim: ft=sh
