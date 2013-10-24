@@ -33,4 +33,6 @@ wget 'http://www.vim.org/scripts/download_script.php?src_id=6678' -O django/synt
 # vim-scala
 git clone https://github.com/derekwyatt/vim-scala.git
 
+# vim-elixir
+git clone https://github.com/elixir-lang/vim-elixir.git
 # vim: ft=sh
