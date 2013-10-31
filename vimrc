@@ -63,6 +63,9 @@ map <Leader>p gqip
 " Current directory follows active file
 autocmd BufEnter * silent! lcd %:p:h
 
+" Lose the toolbar:
+set guioptions-=T
+
 " Status bar shows line, col, file, file-format, file-type:
 set laststatus=2
 set statusline=Ln\ %l\ Col\ %v\ %F\ (%{&ff},\ %Y)
