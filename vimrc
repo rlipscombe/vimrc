@@ -146,4 +146,7 @@ set nu
 highlight LineNr guifg=#70C0F0
 highlight LineNr ctermfg=gray
 
+" ctags
+set tags=tags;/
+
 " vim: set ft=vim :
