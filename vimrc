@@ -21,6 +21,7 @@ if has("gui_running")
   " gui_running => not in a terminal => safe to resize.
   set lines=50
   set columns=120
+  " TODO: This is broken if you :so % while maximized...
 endif
 
 " In terminal mode, use a different coloured cursor for insert mode:
@@ -139,5 +140,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" Show line numbers.
+set nu
+highlight LineNr guifg=#70C0F0
+highlight LineNr ctermfg=gray
 
 " vim: set ft=vim :
