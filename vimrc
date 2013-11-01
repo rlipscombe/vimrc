@@ -55,8 +55,17 @@ vmap <S-Insert> "-d"+gP
 "   (c)ommand-line mode - ???
 cmap <S-Insert> <C-R><C-O>+
 
-" Delete buffer
-map <Leader>q :bdel<Enter>
+" Delete buffer or quit if last
+function ExtendedClose()
+  let bufcount = len(filter(range(1, bufnr('$')), 'buflisted(v:val)==1'))
+  if bufcount > 1
+    exe ":bdelete"
+  else
+    exe ":q"
+  endif
+endfunction
+
+nnoremap <Leader>q :call ExtendedClose()<CR>
 
 " Reformat paragraph
 map <Leader>p gqip
