@@ -25,14 +25,24 @@ if has("gui_running")
 endif
 
 " In terminal mode, use a different coloured cursor for insert mode:
-if &term =~ "xterm-256color"
-    " Use an orange cursor in insert mode.
-    let &t_SI = "\<Esc>]12;orange\x7"
-    " Use a white cursor otherwise, and set it initially.
-    let &t_EI = "\<Esc>]12;white\x7"
-    silent !echo -ne "\E]12;white\x7"
-    " Reset it when exiting.
-    autocmd VimLeave * silent !echo -ne "\E]12;white\x7"
+" If this is a real xterm, then we can actually change the
+" cursor shape:
+if $ACTUAL_TERM =~ "xterm-256color"
+  " Use an I-beam cursor in insert mode.
+  let &t_SI = "\<Esc>[5 q"
+  " Use a block cursor otherwise, and set it initially.
+  let &t_EI = "\<Esc>[4 q"
+  silent !echo -ne "\E[4 q"
+  " Reset it when exiting.
+  autocmd VimLeave * silent !echo -ne "\E[4 q"
+elseif $ACTUAL_TERM =~ "gnome-terminal"
+  " Use an orange cursor in insert mode.
+  let &t_SI = "\<Esc>]12;orange\x7"
+  " Use a white cursor otherwise, and set it initially.
+  let &t_EI = "\<Esc>]12;white\x7"
+  silent !echo -ne "\E]12;white\x7"
+  " Reset it when exiting.
+  autocmd VimLeave * silent !echo -ne "\E]12;white\x7"
 end
 
 " Make Backspace key work like most other apps
