@@ -70,6 +70,9 @@ nnoremap <Leader>q :call ExtendedClose()<CR>
 " Reformat paragraph
 map <Leader>p gqip
 
+" Save all
+nmap <Leader>s :wa<CR>
+
 " Home key alternates between start of text and column zero.
 function ExtendedHome()
   let column = col('.')
