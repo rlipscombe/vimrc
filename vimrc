@@ -155,6 +155,9 @@ autocmd BufNewFile,BufRead *.app.src set filetype=erlang
 " Django Templates (also erlydtl)
 autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
 
+" Special-case for my SSH config files:
+au BufRead,BufEnter ~/.ssh/config.d/* set ft=sshconfig
+
 " Custom syntastic settings:
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 let g:syntastic_always_populate_loc_list=1
