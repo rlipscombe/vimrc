@@ -168,6 +168,9 @@ au BufRead,BufEnter ~/.ssh/config.d/* set ft=sshconfig
 let g:syntastic_javascript_jshint_conf="~/.jshintrc"
 let g:syntastic_always_populate_loc_list=1
 
+" vim-makeshift:
+nnoremap <C-S-B> :MakeshiftBuild<CR>
+
 " Rainbow brackets
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
