@@ -5,6 +5,7 @@ set nocompatible
 execute pathogen#infect()
 
 if has("unix")
+  " 'Darwin' or 'Linux'.
   let s:uname = system("echo -n \"$(uname -s)\"")
 else
   let s:uname = ""
@@ -17,17 +18,20 @@ if has("gui_running")
     set guifont=Monospace\ 9
   elseif has("gui_win32")
     set guifont=Consolas:h10:cANSI
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
   endif
-  " TODO: How do we detect Mac? That said, the default "menlo" font is
-  " acceptable.
 endif
 
 " On Mac OS X, "set lines" causes the terminal window to be resized; we don't want that.
 if has("gui_running")
   " gui_running => not in a terminal => safe to resize.
-  set lines=50
-  set columns=120
-  " TODO: This is broken if you :so % while maximized...
+  if &lines < 50
+    set lines=50
+  endif
+  if &columns < 120
+    set columns=120
+  endif
 endif
 
 " In terminal mode, use a different coloured cursor for insert mode:
@@ -105,20 +109,6 @@ set statusline=Ln\ %l\ Col\ %v\ %F\ (%{&ff},\ %Y)
 set wildmode=longest,list,full
 set wildmenu
 
-filetype plugin on
-filetype plugin indent on
-syntax on
-
-" Set spaces-for-tabs, 2 spaces.
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-
-" electric imp uses tab width 4.
-augroup EI
-  au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
-augroup END
-
 " Keyboard selection is more like Windows
 set selectmode=mouse,key
 set selection=exclusive
@@ -133,6 +123,21 @@ set autoindent
 " Visual bell
 set visualbell
 
+" filetype stuff
+filetype plugin on
+filetype plugin indent on
+syntax on
+
+" Set spaces-for-tabs, 2 spaces.
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+" electric imp uses tab width 4.
+augroup EI
+  au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
+augroup END
+
 " Add some other file extensions:
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.config set ft=xml
@@ -143,7 +148,7 @@ autocmd BufNewFile,BufRead *.ejs set ft=html
 
 autocmd BufNewFile,BufRead *.ps1,*.psm1 set shiftwidth=4 softtabstop=4
 
-autocmd BufNewFile,BufRead *.md set ft=markdown et sts=4 sw=4
+autocmd BufNewFile,BufRead *.md set ft=markdown et sts=4 sw=4 suffixesadd=.md
 autocmd BufNewFile,BufRead SCons* set ft=scons
 autocmd BufNewFile,BufRead *.nut set ft=squirrel
 
@@ -151,7 +156,8 @@ autocmd BufNewFile,BufRead *bash* let b:is_bash=1
 autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
 
 " For 'make', tabs = tabs.
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
+autocmd BufNewFile,BufEnter Makefile set noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 
 " Erlang
 autocmd FileType erlang set expandtab shiftwidth=4 softtabstop=4 tabstop=8
