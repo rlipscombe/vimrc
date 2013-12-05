@@ -35,7 +35,7 @@ if has("gui_running")
 endif
 
 " In terminal mode, use a different coloured cursor for insert mode:
-if s:uname != "Darwin" && &term =~ "xterm-256color"
+if s:uname != "Darwin" && &term =~ "xterm-256color" && !has("gui_running")
   " Use an orange cursor in insert mode.
   let &t_SI = "\<Esc>]12;orange\x7"
   " Use a white cursor otherwise, and set it initially.
