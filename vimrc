@@ -133,9 +133,10 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" electric imp uses tab width 4.
+" electric imp uses tab width 4 for JavaScript
 augroup EI
-  au BufRead,BufEnter ~/Source/imp/* set et sts=4 sw=4
+  au BufRead,BufEnter ~/Source/imp/*.js set et sts=4 sw=4
+  au BufRead,BufEnter ~/Source/imp/*.json set et sts=4 sw=4
 augroup END
 
 " Add some other file extensions:
@@ -158,6 +159,7 @@ autocmd BufNewFile,BufRead *bash* set filetype=sh syntax=sh
 " For 'make', tabs = tabs.
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 autocmd BufNewFile,BufEnter Makefile set noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
+autocmd BufNewFile,BufEnter *.mk set noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 
 " Erlang
 autocmd FileType erlang set expandtab shiftwidth=4 softtabstop=4 tabstop=8
