@@ -128,16 +128,10 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-" Set spaces-for-tabs, 2 spaces.
+" Set spaces-for-tabs, 4 spaces.
 set expandtab
-set shiftwidth=2
-set softtabstop=2
-
-" electric imp uses tab width 4 for JavaScript
-augroup EI
-  au BufRead,BufEnter ~/Source/imp/*.js set et sts=4 sw=4
-  au BufRead,BufEnter ~/Source/imp/*.json set et sts=4 sw=4
-augroup END
+set shiftwidth=4
+set softtabstop=4
 
 " Add some other file extensions:
 autocmd BufNewFile,BufRead *.json set ft=javascript
