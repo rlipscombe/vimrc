@@ -168,6 +168,7 @@ au BufRead,BufEnter ~/.ssh/config.d/* set ft=sshconfig
 
 " Using syntastic; disable vimerl's syntax checker:
 let g:erlang_show_errors = 0
+au BufEnter *.erl let b:syntastic_checkers=['syntaxerl']
 
 " Custom syntastic settings:
 function s:find_jshintrc(dir)
