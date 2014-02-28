@@ -166,6 +166,9 @@ autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
 " Special-case for my SSH config files:
 au BufRead,BufEnter ~/.ssh/config.d/* set ft=sshconfig
 
+" Using syntastic; disable vimerl's syntax checker:
+let g:erlang_show_errors = 0
+
 " Custom syntastic settings:
 function s:find_jshintrc(dir)
     let l:found = globpath(a:dir, '.jshintrc')
@@ -189,6 +192,7 @@ endfunction
 
 au BufEnter * call UpdateJsHintConf()
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_debug = 0
 
 " vim-makeshift:
 nnoremap <C-S-B> :MakeshiftBuild<CR>
