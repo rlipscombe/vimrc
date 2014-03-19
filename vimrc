@@ -7,6 +7,7 @@ execute pathogen#infect()
 if has("unix")
   " 'Darwin' or 'Linux'.
   let s:uname = system("echo -n \"$(uname -s)\"")
+  let $PLATFORM = tolower(s:uname)
 else
   let s:uname = ""
 end
