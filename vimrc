@@ -175,6 +175,15 @@ autocmd BufNewFile,BufRead *.dtl set filetype=htmldjango
 " Special-case for my SSH config files:
 au BufRead,BufEnter ~/.ssh/config.d/* set ft=sshconfig
 
+function! StripTrailingWhitespace()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfunction
+
+autocmd FileType c,cpp,erlang,python,ruby autocmd BufWritePre <buffer> :call StripTrailingWhitespace()
+
 " Using syntastic; disable vimerl's syntax checker:
 let g:erlang_show_errors = 0
 au BufEnter *.erl let b:syntastic_checkers=['syntaxerl']
