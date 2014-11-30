@@ -186,6 +186,9 @@ autocmd FileType c,cpp,erlang,python,ruby autocmd BufWritePre <buffer> :call Str
 
 " Using syntastic; disable vimerl's syntax checker:
 let g:erlang_show_errors = 0
+
+" For erlang (not escript) files, tell syntastic to use syntaxerl (which has
+" to be in $PATH to work).
 au BufEnter *.erl let b:syntastic_checkers=['syntaxerl']
 
 " Custom syntastic settings:
