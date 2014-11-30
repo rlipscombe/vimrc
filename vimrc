@@ -76,13 +76,21 @@ function ExtendedClose()
   endif
 endfunction
 
+function WriteAndClose()
+    exe ":write"
+    exe ":bdelete"
+endfunction
+
 nnoremap <Leader>q :call ExtendedClose()<CR>
+nnoremap <Leader>w :call WriteAndClose()<CR>
 
 " Reformat paragraph
 map <Leader>p gqip
 
 " Save all
 nmap <Leader>s :wa<CR>
+nmap <C-S> :w<CR>
+nmap <C-S-S> :wa<CR>
 
 " Home key alternates between start of text and column zero.
 function ExtendedHome()
