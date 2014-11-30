@@ -21,7 +21,12 @@ The next bit has to be done from an **elevated Command Prompt**:
 
 Using [Pathogen](https://github.com/tpope/vim-pathogen), and git submodules:
 
+    # On the first clone:
     cd /path/to/vimrc
     git submodule add git://github.com/tpope/vim-liquid vim/bundle/vim-liquid
+
+    # On other clones:
+    git submodule init
+    git submodule update
 
 (for example)
