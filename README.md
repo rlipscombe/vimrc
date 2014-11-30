@@ -16,3 +16,12 @@ The next bit has to be done from an **elevated Command Prompt**:
     cd /d %HOMEDRIVE%%HOMEPATH%
     mklink _vimrc vimrc\vimrc
     mklink /D vimfiles vimrc\vim
+
+# Plugins
+
+Using [Pathogen](https://github.com/tpope/vim-pathogen), and git submodules:
+
+    cd /path/to/vimrc
+    git submodule add git://github.com/tpope/vim-liquid vim/bundle/vim-liquid
+
+(for example)
