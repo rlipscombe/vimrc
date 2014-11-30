@@ -214,6 +214,7 @@ endfunction
 
 au BufEnter * call UpdateJsHintConf()
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
 let g:syntastic_debug = 0
 
 " vim-makeshift:
