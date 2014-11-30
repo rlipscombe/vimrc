@@ -226,6 +226,12 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" CtrlP
+let g:ctrlp_custom_ignore = {
+            \ 'file': '\v\.beam$',
+            \ 'dir': '\v\_site$'
+            \ }
+
 " Show line numbers.
 set nu
 highlight LineNr guifg=#70C0F0
