@@ -69,6 +69,3 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
-[submodule "vim/bundle/vim-instant-markdown"]
-	path = vim/bundle/vim-instant-markdown
-	url = git://github.com/suan/vim-instant-markdown
