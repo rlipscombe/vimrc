@@ -27,10 +27,10 @@ endif
 " On Mac OS X, "set lines" causes the terminal window to be resized; we don't want that.
 if has("gui_running")
   " gui_running => not in a terminal => safe to resize.
-  if &lines < 50
+  if &lines != 50
     set lines=50
   endif
-  if &columns < 120
+  if &columns != 120
     set columns=120
   endif
 endif
