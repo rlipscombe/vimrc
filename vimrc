@@ -14,7 +14,7 @@ end
 
 " Set the font, colour scheme, etc. appropriately.
 if has("gui_running")
-  colors desert
+  colors autumn
   if has("gui_gtk2")
     set guifont=Monospace\ 9
   elseif has("gui_win32")
