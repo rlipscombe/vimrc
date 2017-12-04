@@ -1,6 +1,14 @@
 " This MUST come first
 set nocompatible
 
+" Use pathogen for managing plugins. This must come fairly near the top.
+execute pathogen#infect()
+
+" Current directory follows active file.
+autocmd BufEnter * silent! lcd %:p:h
+
+" Include other stuff
+source ~/.vim/startup/size.vim
 source ~/.vim/startup/keybindings.vim
 source ~/.vim/startup/selection.vim
 
