@@ -1,4 +1,7 @@
 " This MUST come first
 set nocompatible
 
+source ~/.vim/startup/keybindings.vim
+source ~/.vim/startup/selection.vim
+
 " vim: set ft=vim:
