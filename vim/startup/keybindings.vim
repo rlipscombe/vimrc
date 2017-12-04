@@ -5,10 +5,10 @@ set backspace=indent,eol,start
 vnoremap <S-Del>	"+x
 vnoremap <C-Insert>	"+y
 
-nmap <S-Insert>		"+gP
-imap <S-Insert>		<C-R><C-O>+
-vmap <S-Insert>		"-d"+gP
-cmap <S-Insert>		<C-R><C-O>+
+nmap <S-Insert>	"+gP
+imap <S-Insert>	<C-R><C-O>+
+vmap <S-Insert>	"-d"+gP
+cmap <S-Insert>	<C-R><C-O>+
 
 " Home key alternates between start of text and column zero
 function ExtendedHome()
