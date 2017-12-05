@@ -11,7 +11,7 @@ vmap <S-Insert>	"-d"+gP
 cmap <S-Insert>	<C-R><C-O>+
 
 " Home key alternates between start of text and column zero
-function ExtendedHome()
+function! ExtendedHome()
   let column = col('.')
   normal! ^
   if column == col('.')

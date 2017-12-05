@@ -7,5 +7,5 @@ if g:os != "Darwin" && &term =~ "xterm-256color" && !has("gui_running")
   " Set the cursor colour initially
   silent !echo -ne "\E]12;\#c0c0c0\x7"
   " Reset the cursor colour when exiting
-  autocmd VimLeave * silent !echo -ne "\E]12;#c0c0c0\x7"
+  autocmd VimLeave * silent !echo -ne "\E]12;\#c0c0c0\x7"
 end

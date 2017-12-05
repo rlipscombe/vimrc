@@ -7,6 +7,12 @@ execute pathogen#infect()
 " Current directory follows active file.
 autocmd BufEnter * silent! lcd %:p:h
 
+" Allow switching away from modified buffers.
+set hidden
+
+" Visible bell
+set visualbell
+
 if !exists("g:os")
   if has("unix")
     let g:os = substitute(system('uname'), '\n', '', '')
