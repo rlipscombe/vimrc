@@ -1,6 +1,3 @@
-[submodule "vim/bundle/vim-airline"]
-	path = vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
 [submodule "vim-erlang-runtime"]
 	path = vim/bundle/vim-erlang-runtime
 	url = git@github.com:vim-erlang/vim-erlang-runtime.git
