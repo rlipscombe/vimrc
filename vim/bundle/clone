@@ -1,4 +1,5 @@
-git clone git@github.com:altercation/vim-colors-solarized
+git clone git@github.com:vim-airline/vim-airline.git
+git clone git@github.com:altercation/vim-colors-solarized.git
 git clone git@github.com:vim-erlang/vim-erlang-runtime.git
 git clone git@github.com:vim-erlang/vim-erlang-compiler.git
 git clone git@github.com:vim-erlang/vim-erlang-tags.git
