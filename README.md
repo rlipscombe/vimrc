@@ -10,7 +10,7 @@
 
     cd /d %HOMEDRIVE%%HOMEPATH%
     git clone --recursive git://github.com/rlipscombe/vimrc.git vimrc
-    
+
 The next bit has to be done from an **elevated Command Prompt**:
 
     cd /d %HOMEDRIVE%%HOMEPATH%
@@ -23,7 +23,9 @@ Using [Pathogen](https://github.com/tpope/vim-pathogen), and git submodules:
 
     # On the first clone:
     cd /path/to/vimrc
-    git submodule add git://github.com/tpope/vim-liquid vim/bundle/vim-liquid
+    git submodule add \
+        git://github.com/tpope/vim-liquid \
+        vim/bundle/vim-liquid
 
     # On other clones:
     git submodule init
