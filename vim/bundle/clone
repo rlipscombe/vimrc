@@ -1,12 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
 git_clone() {
-    if cd $2; then
+    echo -n "$2: "
+    if pushd $2; then
         git pull
+        popd
     else
         git clone $1 $2
     fi
 }
+
+pushd $(pwd)
 
 git_clone git@github.com:vim-airline/vim-airline.git ~/.vim/bundle/vim-airline
 git_clone git@github.com:altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
@@ -16,3 +20,9 @@ git_clone git@github.com:vim-erlang/vim-erlang-compiler.git ~/.vim/bundle/vim-er
 git_clone git@github.com:vim-erlang/vim-erlang-tags.git ~/.vim/bundle/vim-erlang-tags
 
 git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
+
+popd
+
+# Using the explicit path for ls prevents it from using the alias
+# (i.e. it turns off -F).
+/bin/ls -1d */ > .gitignore
