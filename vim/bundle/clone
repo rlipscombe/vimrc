@@ -1,5 +1,18 @@
-git clone git@github.com:vim-airline/vim-airline.git
-git clone git@github.com:altercation/vim-colors-solarized.git
-git clone git@github.com:vim-erlang/vim-erlang-runtime.git
-git clone git@github.com:vim-erlang/vim-erlang-compiler.git
-git clone git@github.com:vim-erlang/vim-erlang-tags.git
+#!/bin/sh
+
+git_clone() {
+    if cd $2; then
+        git pull
+    else
+        git clone $1 $2
+    fi
+}
+
+git_clone git@github.com:vim-airline/vim-airline.git ~/.vim/bundle/vim-airline
+git_clone git@github.com:altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+
+git_clone git@github.com:vim-erlang/vim-erlang-runtime.git ~/.vim/bundle/vim-erlang-runtime
+git_clone git@github.com:vim-erlang/vim-erlang-compiler.git ~/.vim/bundle/vim-erlang-compiler
+git_clone git@github.com:vim-erlang/vim-erlang-tags.git ~/.vim/bundle/vim-erlang-tags
+
+git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
