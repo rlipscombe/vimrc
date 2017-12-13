@@ -24,11 +24,13 @@ source ~/.vim/startup/size.vim
 source ~/.vim/startup/term.vim
 source ~/.vim/startup/keybindings.vim
 source ~/.vim/startup/selection.vim
+source ~/.vim/startup/clipboard.vim
 source ~/.vim/startup/tabcomplete.vim
 source ~/.vim/startup/toolbar.vim
 source ~/.vim/startup/statusbar.vim
 source ~/.vim/startup/whitespace.vim
 source ~/.vim/startup/linenumbers.vim
+source ~/.vim/startup/mouse.vim
 
 source ~/.vim/startup/filetype.vim
 source ~/.vim/startup/indent.vim
