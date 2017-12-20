@@ -24,10 +24,12 @@ git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
 git_clone git@github.com:EinfachToll/DidYouMean.git ~/.vim/bundle/DidYouMean
 git_clone git@github.com:kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 
+git_clone git@github.com:tpope/vim-unimpaired.git ~/.vim/bundle/vim-unimpaired
+
 git_clone git@github.com:airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
 
 popd
 
 # Using the explicit path for ls prevents it from using the alias
 # (i.e. it turns off -F).
-/bin/ls -1d */ > .gitignore
+/bin/ls -1d */ > ~/.vim/bundle/.gitignore
