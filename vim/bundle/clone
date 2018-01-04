@@ -20,6 +20,7 @@ git_clone git@github.com:vim-erlang/vim-erlang-compiler.git ~/.vim/bundle/vim-er
 git_clone git@github.com:vim-erlang/vim-erlang-tags.git ~/.vim/bundle/vim-erlang-tags
 
 git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
+git_clone git@github.com:vim-scripts/squirrel.vim.git ~/.vim/bundle/squirrel.vim
 
 git_clone git@github.com:tpope/vim-markdown.git ~/.vim/bundle/vim-markdown
 
