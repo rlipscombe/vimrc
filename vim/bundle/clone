@@ -21,6 +21,8 @@ git_clone git@github.com:vim-erlang/vim-erlang-tags.git ~/.vim/bundle/vim-erlang
 
 git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
 
+git_clone git@github.com:tpope/vim-markdown.git ~/.vim/bundle/vim-markdown
+
 git_clone git@github.com:EinfachToll/DidYouMean.git ~/.vim/bundle/DidYouMean
 git_clone git@github.com:kien/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 
