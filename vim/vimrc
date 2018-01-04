@@ -12,6 +12,7 @@ set hidden
 
 " Visible bell
 set visualbell
+colorscheme desert
 
 if !exists("g:os")
   if has("unix")
