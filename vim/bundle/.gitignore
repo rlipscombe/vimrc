@@ -1,12 +1,10 @@
 ctrlp.vim/
 DidYouMean/
 squirrel.vim/
+syntastic/
 vim-airline/
 vim-colors-solarized/
 vim-elixir/
-vim-erlang-compiler/
-vim-erlang-runtime/
-vim-erlang-tags/
 vim-gitgutter/
 vim-markdown/
 vim-unimpaired/
