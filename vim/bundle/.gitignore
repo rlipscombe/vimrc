@@ -5,6 +5,7 @@ syntastic/
 vim-airline/
 vim-colors-solarized/
 vim-elixir/
+vim-erlang-runtime/
 vim-gitgutter/
 vim-markdown/
 vim-unimpaired/
