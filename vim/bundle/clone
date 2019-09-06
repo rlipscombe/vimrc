@@ -24,6 +24,8 @@ git_clone git@github.com:vim-erlang/vim-erlang-runtime.git ~/.vim/bundle/vim-erl
 git_clone git@github.com:elixir-lang/vim-elixir.git ~/.vim/bundle/vim-elixir
 git_clone git@github.com:vim-scripts/squirrel.vim.git ~/.vim/bundle/squirrel.vim
 
+git_clone git@github.com:rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
+
 git_clone git@github.com:tpope/vim-markdown.git ~/.vim/bundle/vim-markdown
 
 git_clone git@github.com:EinfachToll/DidYouMean.git ~/.vim/bundle/DidYouMean
@@ -35,6 +37,4 @@ git_clone git@github.com:airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
 
 popd
 
-# Using the explicit path for ls prevents it from using the alias
-# (i.e. it turns off -F).
-/bin/ls -1d */ > ~/.vim/bundle/.gitignore
+\ls -1d */ > ~/.vim/bundle/.gitignore
