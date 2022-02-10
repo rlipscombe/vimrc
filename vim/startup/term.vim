@@ -4,8 +4,4 @@ if g:os != "Darwin" && &term =~ "xterm-256color" && !has("gui_running")
   let &t_SI = "\<Esc>]12;orange\x7"
   " Use a grey/white cursor otherwise
   let &t_EI = "\<Esc>]12;\#c0c0c0\x7"
-  " Set the cursor colour initially
-  silent !echo -ne "\E]12;\#c0c0c0\x7"
-  " Reset the cursor colour when exiting
-  autocmd VimLeave * silent !echo -ne "\E]12;\#c0c0c0\x7"
 end
